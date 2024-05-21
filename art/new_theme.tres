@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dvij7nld6h5xj"]
+
+[ext_resource type="Texture2D" uid="uid://c2m6dyanca68q" path="res://art/blueSheet.png" id="1_7kc47"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwge8"]
+texture = ExtResource("1_7kc47")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(239, 194, 49, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06xuk"]
+texture = ExtResource("1_7kc47")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(339, 94, 49, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3r84"]
+texture = ExtResource("1_7kc47")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(337, 184, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqggg"]
+atlas = ExtResource("1_7kc47")
+region = Rect2(416, 72, 28, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqet7"]
+atlas = ExtResource("1_7kc47")
+region = Rect2(416, 72, 28, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8blc"]
+content_margin_bottom = 4.0
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_wwge8")
+Button/styles/normal = SubResource("StyleBoxTexture_06xuk")
+Button/styles/pressed = SubResource("StyleBoxTexture_t3r84")
+HSlider/icons/grabber = SubResource("AtlasTexture_nqggg")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_oqet7")
+HSlider/styles/slider = SubResource("StyleBoxFlat_s8blc")
