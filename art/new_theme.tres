@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwge8"]
 content_margin_left = 6.0
-content_margin_right = 6.0
+content_margin_right = 4.0
 texture = ExtResource("1_nhw5k")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -16,10 +16,10 @@ texture_margin_bottom = 9.0
 region_rect = Rect2(239, 194, 49, 49)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06xuk"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 9.0
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 8.0
 texture = ExtResource("1_ipl6e")
 texture_margin_left = 5.0
 texture_margin_top = 5.0

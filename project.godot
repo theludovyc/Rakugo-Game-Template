@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/rakugo_game_template/plugin.cfg")
 [gui]
 
 theme/custom="res://art/new_theme.tres"
+theme/custom_font="res://art/Kenney Future Narrow.ttf"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]
