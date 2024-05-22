@@ -24,7 +24,7 @@ size_flags_horizontal = 3
 text = "Fullscreen :"
 horizontal_alignment = 1
 
-[node name="FullscreenButton" type="CheckButton" parent="FullscreenControl"]
+[node name="FullscreenButton" type="CheckBox" parent="FullscreenControl"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2

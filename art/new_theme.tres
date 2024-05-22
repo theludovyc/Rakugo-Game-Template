@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dvij7nld6h5xj"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://dvij7nld6h5xj"]
 
 [ext_resource type="Texture2D" uid="uid://c2m6dyanca68q" path="res://art/blueSheet.png" id="1_7kc47"]
 [ext_resource type="Texture2D" uid="uid://cpwyacv7kqc31" path="res://art/blueSheet_ct.tres" id="1_ipl6e"]
@@ -34,6 +34,26 @@ texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 9.0
 region_rect = Rect2(337, 184, 49, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhmsl"]
+atlas = ExtResource("1_ipl6e")
+region = Rect2(381, 36, 36, 36)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoy1y"]
+atlas = ExtResource("3_251tn")
+region = Rect2(148, 433, 36, 36)
+filter_clip = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82t6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uk1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvohi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nn1xo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfv1w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqggg"]
 atlas = ExtResource("1_7kc47")
@@ -79,6 +99,13 @@ region_rect = Rect2(190, 194, 49, 45)
 Button/styles/hover = SubResource("StyleBoxTexture_wwge8")
 Button/styles/normal = SubResource("StyleBoxTexture_06xuk")
 Button/styles/pressed = SubResource("StyleBoxTexture_t3r84")
+CheckBox/icons/checked = SubResource("AtlasTexture_jhmsl")
+CheckBox/icons/unchecked = SubResource("AtlasTexture_hoy1y")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_82t6b")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_8uk1w")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_rvohi")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_nn1xo")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_hfv1w")
 HSlider/icons/grabber = SubResource("AtlasTexture_nqggg")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_oqet7")
 HSlider/styles/slider = SubResource("StyleBoxFlat_s8blc")
