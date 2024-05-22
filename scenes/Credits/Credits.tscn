@@ -2,18 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/Credits/RichTextLabel.gd" id="2_clwmv"]
 
-
-[node name="Credits" type="ScrollContainer"]
+[node name="RichTextLabel" type="RichTextLabel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center][font_size=18][b]Game Credits[/b][/font_size][/center]
@@ -40,4 +34,4 @@ fit_content = true
 scroll_active = false
 script = ExtResource("2_clwmv")
 
-[connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_on_RichTextLabel_meta_clicked"]
+[connection signal="meta_clicked" from="." to="." method="_on_RichTextLabel_meta_clicked"]

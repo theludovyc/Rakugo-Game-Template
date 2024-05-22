@@ -55,14 +55,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 expand_margin_top = 5.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4m277"]
-texture = ExtResource("3_251tn")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
-region_rect = Rect2(190, 98, 100, 100)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2fif"]
 content_margin_left = 10.0
 content_margin_top = 10.0
@@ -75,6 +67,14 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(190, 98, 100, 100)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8s0j"]
+texture = ExtResource("1_ipl6e")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(190, 194, 49, 45)
+
 [resource]
 Button/styles/hover = SubResource("StyleBoxTexture_wwge8")
 Button/styles/normal = SubResource("StyleBoxTexture_06xuk")
@@ -82,5 +82,5 @@ Button/styles/pressed = SubResource("StyleBoxTexture_t3r84")
 HSlider/icons/grabber = SubResource("AtlasTexture_nqggg")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_oqet7")
 HSlider/styles/slider = SubResource("StyleBoxFlat_s8blc")
-Panel/styles/panel = SubResource("StyleBoxTexture_4m277")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_r2fif")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_c8s0j")
