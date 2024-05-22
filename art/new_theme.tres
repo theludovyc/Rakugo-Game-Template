@@ -60,8 +60,8 @@ atlas = ExtResource("1_7kc47")
 region = Rect2(416, 72, 28, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqet7"]
-atlas = ExtResource("1_7kc47")
-region = Rect2(416, 72, 28, 42)
+atlas = ExtResource("1_nhw5k")
+region = Rect2(388, 72, 28, 42)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8blc"]
 content_margin_bottom = 4.0
