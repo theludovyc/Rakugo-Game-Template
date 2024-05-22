@@ -1,0 +1,7 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://cpwyacv7kqc31"]
+
+[ext_resource type="Texture2D" uid="uid://c2m6dyanca68q" path="res://art/blueSheet.png" id="1_s7ade"]
+
+[resource]
+diffuse_texture = ExtResource("1_s7ade")
+texture_filter = 1

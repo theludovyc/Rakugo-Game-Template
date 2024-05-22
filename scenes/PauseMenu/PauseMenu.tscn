@@ -14,13 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
 
 [node name="MenuContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -44,37 +45,42 @@ theme_override_font_sizes/font_size = 24
 text = "Pause"
 horizontal_alignment = 1
 
-[node name="MenuButtons" type="VBoxContainer" parent="MenuContainer/VBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="MenuButtons" type="VBoxContainer" parent="MenuContainer/VBoxContainer/Panel"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="ResumeButton" type="Button" parent="MenuContainer/VBoxContainer/Panel/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="RestartButton" type="Button" parent="MenuContainer/VBoxContainer/Panel/MenuButtons"]
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Restart"
 
-[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/Panel/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Options"
 
-[node name="MainMenuButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="MainMenuButton" type="Button" parent="MenuContainer/VBoxContainer/Panel/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Main Menu"
 
-[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/Panel/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
@@ -129,9 +135,9 @@ layout_mode = 2
 text = "Back"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Panel/MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Panel/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Panel/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Panel/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Panel/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="SubMenuContainer/VBoxContainer/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

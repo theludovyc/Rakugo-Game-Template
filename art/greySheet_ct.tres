@@ -1,0 +1,7 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://b4jtnfddt20gy"]
+
+[ext_resource type="Texture2D" uid="uid://dcpgpqide7hlw" path="res://art/greySheet.png" id="1_ed3ti"]
+
+[resource]
+diffuse_texture = ExtResource("1_ed3ti")
+texture_filter = 1
