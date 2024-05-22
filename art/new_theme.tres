@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://dvij7nld6h5xj"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://dvij7nld6h5xj"]
 
 [ext_resource type="Texture2D" uid="uid://c2m6dyanca68q" path="res://art/blueSheet.png" id="1_7kc47"]
 [ext_resource type="Texture2D" uid="uid://cpwyacv7kqc31" path="res://art/blueSheet_ct.tres" id="1_ipl6e"]
 [ext_resource type="Texture2D" uid="uid://8wg3qlhwbwix" path="res://art/yellowSheet_ct.tres" id="1_nhw5k"]
 [ext_resource type="Texture2D" uid="uid://b4jtnfddt20gy" path="res://art/greySheet_ct.tres" id="3_251tn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7cgw"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_color = Color(0, 0, 0, 0.905882)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwge8"]
 content_margin_left = 6.0
@@ -115,7 +123,20 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(190, 194, 49, 45)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5htyn"]
+texture = ExtResource("1_ipl6e")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 10.0
+expand_margin_top = 35.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(190, 94, 100, 100)
+
 [resource]
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_t7cgw")
 Button/styles/hover = SubResource("StyleBoxTexture_wwge8")
 Button/styles/normal = SubResource("StyleBoxTexture_06xuk")
 Button/styles/pressed = SubResource("StyleBoxTexture_t3r84")
@@ -135,3 +156,4 @@ PopupMenu/icons/radio_checked = SubResource("AtlasTexture_sblvy")
 PopupMenu/icons/radio_unchecked = SubResource("AtlasTexture_hqwe1")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_sou6i")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_c8s0j")
+Window/styles/embedded_border = SubResource("StyleBoxTexture_5htyn")
