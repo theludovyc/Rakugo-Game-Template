@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://dvij7nld6h5xj"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://dvij7nld6h5xj"]
 
 [ext_resource type="Texture2D" uid="uid://c2m6dyanca68q" path="res://art/blueSheet.png" id="1_7kc47"]
 [ext_resource type="Texture2D" uid="uid://cpwyacv7kqc31" path="res://art/blueSheet_ct.tres" id="1_ipl6e"]
@@ -87,6 +87,26 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(190, 98, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sblvy"]
+atlas = ExtResource("1_ipl6e")
+region = Rect2(386, 210, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqwe1"]
+atlas = ExtResource("3_251tn")
+region = Rect2(185, 469, 36, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sou6i"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("3_251tn")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(190, 98, 100, 100)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8s0j"]
 texture = ExtResource("1_ipl6e")
 texture_margin_left = 5.0
@@ -110,4 +130,8 @@ HSlider/icons/grabber = SubResource("AtlasTexture_nqggg")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_oqet7")
 HSlider/styles/slider = SubResource("StyleBoxFlat_s8blc")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_r2fif")
+PopupMenu/colors/font_color = Color(0.6, 0.6, 0.6, 1)
+PopupMenu/icons/radio_checked = SubResource("AtlasTexture_sblvy")
+PopupMenu/icons/radio_unchecked = SubResource("AtlasTexture_hqwe1")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_sou6i")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_c8s0j")
