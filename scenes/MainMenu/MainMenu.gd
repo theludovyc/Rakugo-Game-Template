@@ -1,8 +1,6 @@
 class_name MainMenu
 extends Control
 
-@export var version_number : String = '0.0.0'
-
 var sub_menu
 
 # Position : margin
@@ -53,7 +51,7 @@ func _ready():
 	else:
 		confirm_popup.get_ok_button().pressed.connect(_on_exit_confirmed)
 		
-	%VersionNumber.text = "version : %s" % version_number
+	%VersionNumber.text = "version : " + str(ProjectSettings.get_setting("application/config/version", ""))
 	
 	if Template_position=="Right" :
 		header_margin.size_flags_horizontal  = SIZE_SHRINK_END
@@ -64,11 +62,11 @@ func _ready():
 		for button in menu_button_list:
 			button.alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	
-	if ProjectSettings.get_setting(RakugoGameTemplate.loading_scene_setting_path).is_empty():
+	if RGT_Globals.loading_scene_setting.is_empty():
 		play_button.hide()
 
 func _on_play_button_pressed():
-	SceneLoader.change_scene(ProjectSettings.get_setting(RakugoGameTemplate.first_game_scene_setting_path))
+	SceneLoader.change_scene(RGT_Globals.first_game_scene_setting)
 
 func _on_options_button_pressed():
 	_open_sub_menu(option_menu)
