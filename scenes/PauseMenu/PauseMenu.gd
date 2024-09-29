@@ -5,8 +5,10 @@ const confirm_restart = "Restart the Game ?"
 const confirm_quit = "Quit the Game ?"
 
 @onready var confirm_dialog = %ConfirmDialog
+@onready var accept_dialog = %AcceptDialog
 @onready var sub_menu_container = %SubMenuContainer
 @onready var resume_button = %ResumeButton
+@onready var save_button = %SaveButton
 
 func _process(_delta):
 	if visible and Input.is_action_just_pressed("ui_cancel"):
@@ -51,3 +53,34 @@ func _on_confirm_exit_confirmed():
 
 func _on_back_button_pressed():
 	sub_menu_container.hide()
+
+func _on_save_button_pressed() -> void:
+	save_button.disabled = true
+	
+	accept_dialog.dialog_text = "Saving..."
+	
+	var button = accept_dialog.get_ok_button()
+	
+	button.disabled = true
+	
+	accept_dialog.popup_centered()
+	
+	if SaveHelper.save({}) == OK:
+		hide()
+		
+		#Take screenshot and save it
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png(
+			SaveHelper.save_dir_path + "/" + SaveHelper.last_saved_file_name + ".png"
+		)
+		
+		show()
+	
+		accept_dialog.dialog_text = "The game is saved !"
+	else:
+		accept_dialog.dialog_text = "Cannot save the game !"
+	
+	button.disabled = false
+
+func _on_accept_dialog_confirmed() -> void:
+	save_button.disabled = false
