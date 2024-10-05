@@ -19,6 +19,9 @@ class_name SaveHelper
 ## where the data will be saved
 const save_dir_path = "user://saves"
 
+## to avoid errors
+const json_extension = "json"
+
 ## the last saved file name without extension .json
 static var last_saved_file_name := ""
 
@@ -42,7 +45,7 @@ static func save(data:Dictionary) -> Error:
 	
 	var file_name := Time.get_datetime_string_from_system()
 	
-	var file := FileAccess.open(save_dir_path + "/" + file_name + ".json", FileAccess.WRITE)
+	var file := FileAccess.open(save_dir_path + "/" + file_name + "." + json_extension, FileAccess.WRITE)
 	if file == null:
 		push_error("Cannot create the save file in " + save_dir_path)
 		return ERR_FILE_CANT_WRITE
@@ -62,8 +65,8 @@ static func save(data:Dictionary) -> Error:
 ## if the file cannot be parsed to [JSON] return ERR_INVALID_DATA [br]
 ## return OK in other cases and save the parsed result in last_loaded_data
 static func load(file_name:String) -> Error:
-	if not file_name.get_extension() == "json":
-		file_name += ".json"
+	if not file_name.get_extension() == json_extension:
+		file_name += "." + json_extension
 	
 	var path_to_file := save_dir_path + "/" + file_name
 	
@@ -88,17 +91,36 @@ static func load(file_name:String) -> Error:
 	
 	return OK
 
+static func get_save_file_names() -> PackedStringArray:
+	var dirAccess := DirAccess.open(save_dir_path)
+	if dirAccess == null:
+		push_error("Cannot open the save directory")
+		return []
+	
+	var save_file_names:PackedStringArray = []
+	
+	dirAccess.list_dir_begin()
+	
+	var file_name = dirAccess.get_next()
+
+	while not file_name.is_empty():
+		if not dirAccess.current_is_dir() \
+		and file_name.get_extension() == json_extension:
+			save_file_names.push_back(file_name.left(file_name.rfind(".")))
+			
+		file_name = dirAccess.get_next()
+	
+	if not save_file_names.is_empty():
+		save_file_names.sort()
+	
+	return save_file_names
+
 ## Found last saved file and call load(...) with it [br]
 ## if cannot open saves directory return ERR_CANT_OPEN [br]
 ## if the saves directory is empty return ERR_DOES_NOT_EXIST [br]
 ## in other case return load(...)
 static func load_last_save() -> Error:
-	var dirAccess := DirAccess.open(save_dir_path)
-	if dirAccess == null:
-		push_error("Cannot open the save directory")
-		return ERR_CANT_OPEN
-		
-	var list_file = dirAccess.get_files()
+	var list_file = get_save_file_names()
 	
 	if list_file.is_empty():
 		push_warning("No save to load")

@@ -9,11 +9,13 @@ var sub_menu
 @onready var header_margin = $VBoxContainer/HeaderMargin
 
 @onready var play_button = %PlayButton
+@onready var load_button = %LoadButton
 @onready var option_button = %OptionsButton
 @onready var credit_button = %CreditsButton
 @onready var exit_button = %ExitButton
-@onready var menu_button_list = [play_button,option_button,credit_button,exit_button]
+@onready var menu_button_list = [play_button,load_button,option_button,credit_button,exit_button]
 
+@onready var load_save_menu = %LoadSaveMenu
 @onready var option_menu = %OptionsMenu
 @onready var credit_menu = %CreditsContainer
 
@@ -82,3 +84,6 @@ func _on_exit_confirmed():
 
 func _on_back_button_pressed():
 	_close_sub_menu()
+
+func _on_load_button_pressed() -> void:
+	_open_sub_menu(load_save_menu)
