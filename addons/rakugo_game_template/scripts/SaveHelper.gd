@@ -25,6 +25,9 @@ const json_extension = "json"
 ## the last saved file name without extension .json
 static var last_saved_file_name := ""
 
+## use it to save the file_name to load between scenes
+static var save_file_name_to_load := ""
+
 ## last loaded data [br]
 ## empty [Dictionary] by default
 static var last_loaded_data:Dictionary = {}
