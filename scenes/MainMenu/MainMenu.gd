@@ -68,6 +68,8 @@ func _ready():
 		play_button.hide()
 
 func _on_play_button_pressed():
+	SaveHelper.save_file_name_to_load = ""
+	
 	SceneLoader.change_scene(RGT_Globals.first_game_scene_setting)
 
 func _on_options_button_pressed():

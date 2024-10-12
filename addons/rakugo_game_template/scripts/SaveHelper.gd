@@ -63,17 +63,20 @@ static func save(data:Dictionary) -> Error:
 	
 ## load data from file [br]
 ## file_name should looks like YYYY-MM-DDTHH:MM:SS.json [br]
+## if file_name is empty return ERR_INVALID_PARAMETER [br]
 ## if the extension .json is missing it will be added [br]
 ## if the file cannot be opened and read return ERR_FILE_CANT_READ [br]
 ## if the file cannot be parsed to [JSON] return ERR_INVALID_DATA [br]
 ## return OK in other cases and save the parsed result in last_loaded_data
 static func load(file_name:String) -> Error:
+	if file_name.is_empty():
+		push_warning("file_name is empty !")
+		return ERR_INVALID_PARAMETER
+	
 	if not file_name.get_extension() == json_extension:
 		file_name += "." + json_extension
 	
 	var path_to_file := save_dir_path + "/" + file_name
-	
-	prints("SaveHelper", path_to_file)
 	
 	var file := FileAccess.open(path_to_file, FileAccess.READ)
 	if file == null:
@@ -93,11 +96,16 @@ static func load(file_name:String) -> Error:
 	last_loaded_data = parsed_json
 	
 	return OK
+	
+## Call SaveHelper.load(save_file_name_to_load)
+## if file_name is empty return ERR_INVALID_PARAMETER [br]
+static func load_saved_file_name() -> Error:
+	return SaveHelper.load(save_file_name_to_load)
 
 static func get_save_file_names() -> PackedStringArray:
 	var dirAccess := DirAccess.open(save_dir_path)
 	if dirAccess == null:
-		push_error("Cannot open the save directory")
+		push_warning("Cannot open the save directory")
 		return []
 	
 	var save_file_names:PackedStringArray = []
